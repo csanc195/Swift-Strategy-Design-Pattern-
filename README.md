@@ -1,18 +1,24 @@
 # Swift-Strategy-Design-Pattern-
-This is a simple Swift playground which shows in simple terms the concept of the Strategy Design pattern
-
+<h4>This is a simple Swift playground which shows in simple terms the concept of the Strategy Design pattern.</h4>
 This is the <b>STRATEGY DESIGN PATTERN</b> interpreted by me in Swift,
 this is a simple Swift playground that serves as proof of concept;
 notice that the book <i>"Head First Design Patterns by Eric Freeman
 and Elisabeth Robson in Java"</i> was used as reference. The following design principles
-can be found in this book under <i>"Strategy Design Pattern"</i>:
+can be found in this book under <i>"Strategy Design Pattern"</i> :
 <h3>Design Principles:</h3>
 <ul>
 <li>Identify aspects of your application that vary and separate them from what stays the same.</li>
 <li>Program to an interface, not an implementation.</li>
 <li>Favor composition over inheritance.</li>
 </ul>
-
+Imagine a hypothetical situation where you have an object, or a set of related objects that have a common ancestor, or parent whom they inherit from. For the sake of simplicity lets asume that this parent object is a <b>Duck</b> and that the objects <b>MallardDuck</b>, <b>RocketDuck</b> and <b>RubberDuck</b> all inherit from <b>Duck</b>. 
+Suppose that the need arrises to implement a method that allows <b>Ducks</b> to perform the kind of flight you would expect from any of them. How would a programmer tackle this problem?<br><br>
+One quick solution, and the one that will probably come to mind to the <b>OOP</b> savy is to declare a method fly() as part of the class <b>Duck</b>, this would allow each <b>Duck</b> to <i>inherit</i> the <b>fly()</b> method however this may not be a good solution, as not all <b>Ducks</b> fly the same way, MallardDucks are supposed to fly long distances while RubberDucks just bounce.
+<br><br>
+One would say a better approach would be then to make each duck overide the <b>fly()</b> function each inherit from the <b>Duck</b> class giving it each it's own implementation, that way each duck implements its unique <b>fly()</b> function and every duck can <b>fly</b> the way they are supposed to without worrying about the other <b>Ducks</b>. This seems like a good solution, but what would happen if we include in the program new objects that are also <b>Ducks</b>, (-that is they inherit from the <b>Duck</b> class-) but are not suppossed to implement <b>fly()</b>.<br> For example think the object <b>DuckStatue</b>, this object is not supposed to have a <b>fly()</b> method because of its nature, however our current program implementation will force a fly function unto this object and that is absolutely <i>"no bueno"</i>.
+<br>
+<h4>The better solution is to instead of concentrating in the <b>Ducks</b>, <b>MallardDucks</b>, and other <b>Duck</b> objects focus on the behaviors which vary across all of the Duck classes:</h4>
+<br>
 We start by encapsulating the behavior using a simple base Protocol and creating classes as needed to describe the diferent 
 behaviors that we might need. This makes use of the first principle: <i>"Identify aspects of your application that vary and separate them from what stays the same."</i>
 
