@@ -15,7 +15,7 @@ Imagine a hypothetical situation where you have an object, or a set of related o
 Suppose that the need arrises to implement a method that allows <b>Ducks</b> to perform the kind of flight you would expect from any of them. How would a programmer tackle this problem?<br><br>
 
 One quick solution, and the one that will probably come to mind to the <b>OOP</b> savy is to declare a method fly() as part of the class <b>Duck</b>, this would allow each <b>Duck</b> to <i>inherit</i> the <b>fly()</b> method:
-```
+```swift
 class Duck {
     func fly()->String{ return "I fly!"}
 }
