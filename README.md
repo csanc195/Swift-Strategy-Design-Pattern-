@@ -41,8 +41,8 @@ print(anotherDuck.fly())
 <br><br>
 However simple and easy to grasp this may not be a good solution, as not all <b>Ducks</b> fly the same way, MallardDucks are supposed to fly long distances while RubberDucks just bounce.
  <br><br>
-One would say a better approach would be then to make each duck overide the <b>fly()</b> function each inherit from the <b>Duck</b> class giving it each it's own implementation, that way each duck implements its unique <b>fly()</b> function and every duck can <b>fly</b> the way they are supposed to without worrying about the other <b>Ducks</b>. This seems like a good solution, but what would happen if we include in the program new objects that are also <b>Ducks</b>, (-that is they inherit from the <b>Duck</b> class-) but are not suppossed to implement <b>fly()</b>.<br> For example think of an object which is a duck but the method <b>fly()</b> is completely irrelevant to it, that is to have this object conform to this function is not only erroneous but also ilogical, lets call this object <b>DuckStatue</b>, then our current configurations would make this happen:
-```
+One would say a better approach would be then to make each duck overide the <b>fly()</b> function each inherit from the <b>Duck</b> class giving it each it's own implementation, that way each duck implements its unique <b>fly()</b> function and every duck can <b>fly</b> the way they are supposed to without worrying about the other <b>Ducks</b>. This seems like a good solution, but what would happen if we include in the program new objects that are also <b>Ducks</b>, (-that is they inherit from the <b>Duck</b> class-) but are not suppossed to implement <b>fly()</b>.<br> For example think of an object which is a duck but the method <b>fly()</b> is completely irrelevant to it, that is to have this object conform to this function is not only erroneous but also ilogical, lets call this object <b>DuckStatue</b>, then our current configurations would make the following occur:
+```swift
 class Duck {
     func fly()->String{ return "I fly!"}
 }
